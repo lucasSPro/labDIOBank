@@ -27,7 +27,7 @@ namespace DIO.Bank
                         SacarDaConta();
                         break;
                     case "5":
-                        //Depositar();
+                        DepositarNaConta();
                         break;
                     case "C":
                         Console.Clear();
@@ -35,7 +35,22 @@ namespace DIO.Bank
                    default:
                     throw new ArgumentOutOfRangeException();
                 }
+                opcaoUsuario = ObterOpcaoUsiario();
             }
+            Console.WriteLine("Obrigado por utilizar nossos serviços.");
+            Console.ReadLine();
+        }
+
+        private static void DepositarNaConta()
+        {
+            Console.WriteLine(" Digite o número da conta: ");
+            int indiceConta =  int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o valor e ser depositado: ");
+            double valorDeposito = double.Parse(Console.ReadLine());
+
+            listContas[indiceConta].Depositar(valorDeposito); 
+            
         }
 
         private static void SacarDaConta()
@@ -87,6 +102,7 @@ namespace DIO.Bank
                 credito: entradaCredito,
                 nome: entradaNome
                 );
+            listContas.Add(novaConta);
         }
 
         private static string ObterOpcaoUsiario()
