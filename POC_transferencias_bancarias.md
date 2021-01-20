@@ -1,4 +1,4 @@
-***POC - Criando uma aplicação de transferências bancarias com .NET***  - resumo
+***LAB - Criando uma aplicação de transferências bancarias com .NET***  - resumo
 
 **Objetivos do Projeto** 
 
