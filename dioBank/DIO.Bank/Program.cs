@@ -24,7 +24,7 @@ namespace DIO.Bank
                         //Transferir();
                         break;
                     case "4":
-                        //Sacar();
+                        SacarDaConta();
                         break;
                     case "5":
                         //Depositar();
@@ -36,6 +36,17 @@ namespace DIO.Bank
                     throw new ArgumentOutOfRangeException();
                 }
             }
+        }
+
+        private static void SacarDaConta()
+        {
+            Console.WriteLine(" Digite o número da conta: ");
+            int indiceConta =  int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o valor e ser sacado: ");
+            double valorSaque = double.Parse(Console.ReadLine());
+
+            listContas[indiceConta].Sacar(valorSaque); 
         }
 
         private static void ListarContas()
