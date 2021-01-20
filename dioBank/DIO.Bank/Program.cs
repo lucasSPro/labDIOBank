@@ -15,19 +15,19 @@ namespace DIO.Bank
                 switch (opcaoUsuario)
                 {
                     case "1":
-                        ListarContas();
+                        //ListarContas();
                         break;
                     case "2":
                         InserirConta();
                         break;
                     case "3":
-                        Transferir();
+                        //Transferir();
                         break;
                     case "4":
-                        Sacar();
+                        //Sacar();
                         break;
                     case "5":
-                        Depositar();
+                        //Depositar();
                         break;
                     case "C":
                         Console.Clear();
@@ -37,6 +37,30 @@ namespace DIO.Bank
                 }
             }
         }
+
+        private static void InserirConta()
+        {
+            Console.WriteLine("Inserir nova conta.");
+            Console.WriteLine("Digite 1 para Conta Fisica ou 2 para Juridica:");
+            int entradaTipoConta =  int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o nome do cliente:");
+            string entradaNome = Console.ReadLine();
+
+            Console.WriteLine("digite o saldo inicial:");
+            double entradaSaldo =  double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite o credito inicial:");
+            double  entradaCredito = int.Parse(Console.ReadLine());
+
+            Conta novaConta = new Conta(
+                tipoConta: (TipoDeConta)entradaTipoConta,
+                saldo: entradaSaldo,
+                credito: entradaCredito,
+                nome: entradaNome
+                );
+        }
+
         private static string ObterOpcaoUsiario()
         {
             Console.WriteLine();
