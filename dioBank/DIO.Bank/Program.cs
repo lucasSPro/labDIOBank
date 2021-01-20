@@ -15,7 +15,7 @@ namespace DIO.Bank
                 switch (opcaoUsuario)
                 {
                     case "1":
-                        //ListarContas();
+                        ListarContas();
                         break;
                     case "2":
                         InserirConta();
@@ -35,6 +35,23 @@ namespace DIO.Bank
                    default:
                     throw new ArgumentOutOfRangeException();
                 }
+            }
+        }
+
+        private static void ListarContas()
+        {
+            Console.WriteLine("Lista de contas abertas:");
+
+            if(listContas.Count == 0){
+                Console.WriteLine("--- Nenhuma conta aberta. ---");
+                return;
+            }
+
+            for (int i = 0; i < listContas.Count; i++)
+            {
+                Conta conta = listContas[i];
+                Console.Write("#{0} - ", i);
+                Console.WriteLine(conta);
             }
         }
 
